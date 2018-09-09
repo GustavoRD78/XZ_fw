@@ -4,9 +4,10 @@ Configuration files can be found in arch/arm64/configs.
     msm-perf_defconfig
 
   diffconfigs for each product:
-    Xperia X Performance F8131/F8132 => dora_diffconfig
-    Xperia XZ F8331/F8332            => kagura_diffconfig
-    Xperia XZs G8231/G8232           => keyaki_diffconfig
+    Xperia XZs SOV33            => dora_kddi_diffconfig
+    Xperia XZs SOV34            => kagura_kddi_diffconfig
+    Xperia XZs SOV35            => keyaki_kddi_diffconfig
+
 
 How to build your kernel:
 
@@ -24,7 +25,7 @@ How to build your kernel:
 
 
   Step 1: Build Your Kernel
-    $ cd kernel/msm-<kernel version>
+    $ cd kernel
 
     $ export ARCH=arm64
 
@@ -35,12 +36,12 @@ How to build your kernel:
       NOTE: Please set the prefix of the ARM cross-compiler.
             ex) aarch64-linux-android-
 
-    $ export KBUILD_DIFFCONFIG=kagura_diffconfig
+    $ export KBUILD_DIFFCONFIG=keyaki_kddi_diffconfig
       NOTE: Please set a configuration file you want to build.
 
-    $ make msm-perf_defconfig O=./out
+    $ make msm-perf_defconfig
 
-    $ make O=./out
+    $ make
 
     You can see arch/arm64/boot/Image.gz-dtb if you succeed in building.
 
@@ -48,7 +49,7 @@ How to build your kernel:
   Step 2: Assembling the boot.img
     (In the Linux Kernel directory)
     $ mkbootimg \
-      --kernel out/arch/arm64/boot/Image.gz-dtb \
+      --kernel arch/arm64/boot/Image.gz-dtb \
       --ramdisk ramdisk.img \
       --cmdline "androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=16M@0-0xffffffff coherent_pool=2M" \
       --base 0x80000000 \

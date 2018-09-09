@@ -25,11 +25,12 @@
 #include "msm8996-mtp.dtsi"
 #include "msm8996-tone-common.dtsi"
 #include "msm8996-tone-kagura-common.dtsi"
-#include "msm8996-tone-kagura_generic.dtsi"
+#include "msm8996-tone-kagura_jp-common.dtsi"
+#include "msm8996-tone-kagura_kddi.dtsi"
 #include "dsi-panel-kagura.dtsi"
 
 / {
-	model = "SoMC Kagura-ROW";
-	compatible = "somc,kagura-row", "qcom,msm8996";
+	model = "SoMC Kagura-KDDI";
+	compatible = "somc,kagura-kddi", "qcom,msm8996";
 	qcom,board-id = <8 0>;
 };
