@@ -1,4 +1,4 @@
-/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+/* arch/arm/boot/dts/qcom/msm8996-tone-dora_generic.dtsi
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -17,19 +17,24 @@
  * published by the Free Software Foundation.
  */
 
-
-/dts-v1/;
-
-#include "msm8996-v3.0.dtsi"
-#include "msm8996-mtp.dtsi"
-#include "msm8996-tone-common.dtsi"
-#include "msm8996-tone-dora-common.dtsi"
-#include "msm8996-tone-dora_jp-common.dtsi"
-#include "msm8996-tone-dora_kddi.dtsi"
-#include "dsi-panel-dora.dtsi"
-
-/ {
-	model = "SoMC Dora-KDDI";
-	compatible = "somc,dora-kddi", "qcom,msm8996";
-	qcom,board-id = <8 0>;
+&soc {
+	 /*I2C : BLSP8 */
+	i2c@75b6000 { /* BLSP2 QUP1 */
+		nfc@28 {
+			compatible = "nxp,pn547";
+			reg = <0x28>;
+			interrupt-parent = <&tlmm>;
+			interrupts = <9 0x1>;
+			nxp,irq_gpio = <&tlmm 9 0x00>;
+			nxp,dwld_en = <&tlmm 12 0x00>;
+			nxp,ven = <&pm8994_gpios 7 0x01>;
+			qcom,clk-src = "BBCLK2";
+			qcom,clk-gpio = <&pm8994_gpios 10 0x00>;
+			clocks = <&clock_gcc clk_bb_clk2_pin>;
+			clock-names = "nfc_clk";
+			pinctrl-names = "pn547-active", "pn547-inactive";
+			pinctrl-0 = <&msm_gpio_9 &msm_gpio_12>;
+			pinctrl-1 = <&msm_gpio_9 &msm_gpio_12>;
+		};
+	};
 };

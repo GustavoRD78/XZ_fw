@@ -10,7 +10,7 @@
  * GNU General Public License for more details.
  */
 /*
- * Copyright (C) 2016 Sony Mobile Communications Inc.
+ * Copyright (C) 2015 Sony Mobile Communications Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2, as
@@ -20,16 +20,16 @@
 
 /dts-v1/;
 
-#include "msm8996-v3.0.dtsi"
+#include "msm8996-v3.dtsi"
 #include "msm8996-mtp.dtsi"
 #include "msm8996-tone-common.dtsi"
-#include "msm8996-tone-kagura-common.dtsi"
-#include "msm8996-tone-kagura_jp-common.dtsi"
-#include "msm8996-tone-kagura_kddi.dtsi"
-#include "dsi-panel-kagura.dtsi"
+#include "msm8996-tone-dora-common.dtsi"
+#include "msm8996-tone-dora_generic-common.dtsi"
+#include "msm8996-tone-dora_generic.dtsi"
+#include "dsi-panel-dora.dtsi"
 
 / {
-	model = "SoMC Kagura-KDDI";
-	compatible = "somc,kagura-kddi", "qcom,msm8996";
+	model = "SoMC Dora-ROW";
+	compatible = "somc,dora-row", "qcom,msm8996";
 	qcom,board-id = <8 0>;
 };

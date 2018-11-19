@@ -1,4 +1,4 @@
-/* arch/arm/boot/dts/qcom/msm8996-tone-kagura_jp-common.dtsi
+/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -17,5 +17,18 @@
  * published by the Free Software Foundation.
  */
 
-&soc {
+
+/dts-v1/;
+
+#include "msm8996-v3.dtsi"
+#include "msm8996-mtp.dtsi"
+#include "msm8996-tone-common.dtsi"
+#include "msm8996-tone-keyaki-common.dtsi"
+#include "msm8996-tone-keyaki_generic.dtsi"
+#include "dsi-panel-kagura.dtsi"
+
+/ {
+	model = "SoMC Keyaki-ROW";
+	compatible = "somc,keyaki-row", "qcom,msm8996";
+	qcom,board-id = <8 0>;
 };

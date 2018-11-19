@@ -354,29 +354,29 @@ config ARCH_SONY_TONE
       If you enable this config,
       please use SONY Mobile device tree.
 
-config MACH_SONY_DORA_KDDI
-    bool "Sony Mobile DORA KDDI"
+config MACH_SONY_DORA
+    bool "Sony Mobile DORA"
     depends on ARCH_SONY_TONE
     help
-      Support for the SONY Mobile Dora KDDI device
+      Support for the SONY Mobile Dora device
       which is based on SONY Tone platform.
       If you enable this config,
       please use SONY Mobile device tree.
 
-config MACH_SONY_KAGURA_KDDI
-    bool "Sony Mobile KAGURA KDDI"
+config MACH_SONY_KAGURA
+    bool "Sony Mobile KAGURA"
     depends on ARCH_SONY_TONE
     help
-      Support for the SONY Mobile Kagura KDDI device
+      Support for the SONY Mobile Kagura device
       which is based on SONY Tone platform.
       If you enable this config,
       please use SONY Mobile device tree.
 
-config MACH_SONY_KEYAKI_KDDI
-    bool "Sony Mobile KEYAKI KDDI"
+config MACH_SONY_KEYAKI
+    bool "Sony Mobile KEYAKI"
     depends on ARCH_SONY_TONE
     help
-      Support for the SONY Mobile Keyaki KDDI device
+      Support for the SONY Mobile Keyaki device
       which is based on SONY Tone platform.
       If you enable this config,
       please use SONY Mobile device tree.
